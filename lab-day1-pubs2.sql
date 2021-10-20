@@ -93,4 +93,6 @@ select *, substring(phone, position(' ' in phone)) as "only phone number" from a
 
 -- Capitalise the second character in all last names from the authors table.
 select *, substring(au_lname, 1,1) || upper(substring(au_lname, 2,1)) || substring(au_lname,3) from authors;
+select *, left(au_lname, 1) || upper(substring(au_lname, 2,1)) || right(au_lname,-2) from authors;
 
+select sellers.id, sellers.name, suppliers.name from sellers inner join suppliers on sellers.supplier_id = suppliers.id
